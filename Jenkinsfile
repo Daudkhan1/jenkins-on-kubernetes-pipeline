@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t Daudkhan1/nodejsapp-1.0:latest .'
+                    sh 'docker build -t Daudkhan1/nodejsapp .'
                 }
             }
         }
