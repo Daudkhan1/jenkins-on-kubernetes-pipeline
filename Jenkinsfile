@@ -9,15 +9,15 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t devopshint/nodejsapp-1.0:latest .'
+                    sh 'docker build -t Daudkhan1/nodejsapp-1.0:latest .'
                 }
             }
         }
         stage('Deploy Docker Image') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                        sh 'docker login -u devopshint -p ${dockerhubpwd}'
+                    withCredentials([string(credentialsId: 'docker-id', variable: 'docker-id')]) {
+                        sh 'docker login -u Daudkhan1 -p ${docker-id}'
                     }
                     sh 'docker push devopshint/nodejsapp-1.0:latest'
                 }
